@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RenderButton } from "./Button";
-import { ModalAuth } from "../../Modal/Auth";
+import { ModalLogin } from "../../Modal/Auth/Login";
 import * as S from "./Style";
 
 export const RenderHeader = () => {
@@ -9,7 +9,7 @@ export const RenderHeader = () => {
 
   return (
     <S.Header>
-      <ModalAuth
+      <ModalLogin
         isVisible={isModal}
         title="Modal Title"
         content="u"

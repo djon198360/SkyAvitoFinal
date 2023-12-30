@@ -41,12 +41,12 @@ button,
 a {
   font-family: "Roboto", sans-serif;
 }
-button[type="button"]:disabled {
+/* button[type="button"]:disabled {
   background:  #D9D9D9;
     border: 1px solid #D9D9D9;
      &:hover{   background:  #D9D9D9;
       border: 1px solid #D9D9D9;}
-    }
+    } */
     
 @font-face {
   font-family: "StratosSkyeng";

@@ -73,6 +73,7 @@ export const LogoImg = styled.img`
 
 export const Input = styled.input.attrs((props) => ({
   type: props.type,
+  color: props.color,
 }))`
   width: 100%;
   border-top: none;
@@ -88,6 +89,12 @@ export const Input = styled.input.attrs((props) => ({
   &::placeholder {
     color: #d0cece;
   }
+  /*   ${({ color }) =>
+    color
+      ? "border-bottom: 1px solid green;"
+      : "border-bottom: 1px solid red;"}; */
+  border-bottom: ${(props) =>
+    props.color ? `1px solid ${props.color}` : "1px solid #d0cece"};
 `;
 
 export const Button = styled.button.attrs((props) => ({
@@ -107,8 +114,8 @@ export const Button = styled.button.attrs((props) => ({
   justify-content: center;
   ${({ primary }) =>
     primary
-      ? "background-color: #009EE4;margin-top: 60px;margin-bottom: 20px;color:#fff;border: 1px solid #009EE4;&:hover {background: #0080c1;border: 1px solid #0080c1;}&:active{background-color: #0080C1;}"
-      : "background-color: transparent;border: 1px solid #D0CECE;color:#000;&:hover{background-color: #F4F5F6;} &:active {background-color: #D9D9D9;}"};
+      ? "background-color: #009EE4;margin-top: 60px;margin-bottom: 20px;color:#fff;border: 1px solid #009EE4;&:hover {background: #0080c1;border: 1px solid #0080c1;}&:active{background-color: #0080C1;} &:disabled { margin-top: 60px;margin-bottom: 20px; background: #d9d9d9;border: 1px solid #d9d9d9;}"
+      : "background-color: transparent;border: 1px solid #D0CECE;color:#000;&:hover{background-color: #F4F5F6;} &:active {background-color: #D9D9D9;} &:disabled { background: #d9d9d9;border: 1px solid #d9d9d9;}"};
 `;
 
 export const A = styled.a.attrs((props) => ({
