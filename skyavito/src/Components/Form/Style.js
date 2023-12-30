@@ -23,7 +23,7 @@ export const Input = styled.input.attrs((props) => ({
 }))`
   width: ${(props) => props.width ?? "20%"};
   margin-left: 10px;
-  height: 50px;
+  height: ${(props) => props.height ?? "50px"}; // 50px;
   padding: 13px 19px;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.2);

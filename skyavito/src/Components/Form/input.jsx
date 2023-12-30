@@ -8,8 +8,10 @@ export const RenderInput = ({
   name,
   placeholder,
   width,
+  height,
 }) => (
   <S.Input
+    height={height}
     width={width}
     onChange={onChange}
     placeholder={placeholder}
@@ -26,6 +28,7 @@ RenderInput.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   width: PropTypes?.string,
+  height: PropTypes?.string,
 };
 RenderInput.defaultProps = {
   value: PropTypes.string,
@@ -34,4 +37,5 @@ RenderInput.defaultProps = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   width: PropTypes?.string,
+  height: "50px",
 };

@@ -1,6 +1,6 @@
 import { styled, keyframes } from "styled-components";
 
-export const Modal = styled.div`
+export const ModalBlock = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -11,21 +11,26 @@ export const Modal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.25);
   animation-name: Appear;
   animation-duration: 300ms;
-`;
-export const ModalDialog = styled.div`
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #f4f5f6;
   width: 100%;
-  max-width: 550px;
-  background: white;
-  position: relative;
-  margin: 0 20px;
-  max-height: calc(100vh - 40px);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+  min-height: 100%;
   overflow: hidden;
+`;
+
+export const Modal = styled.div`
+  border-radius: 0.75rem;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #f4f5f6;
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 219.5px);
+  opacity: 1;
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -34,35 +39,81 @@ export const ModalDialog = styled.div`
   animation-name: SlideIn;
   animation-duration: 0.5s;
 `;
-export const ModalTitle = styled.h3``;
-export const ModalHF = styled.div`
+
+export const Block = styled.div`
+  /*  position: absolute; */
+  z-index: 2;
+  left: calc(50% - 183px);
+  top: calc(50% - 219.5px);
+  opacity: 1;
+`;
+
+export const Form = styled.form`
+  width: 366px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 43px 47px 47px 40px;
+  display: flex;
+`;
+
+export const Logo = styled.div`
+  width: 140px;
+  height: 21px;
+  margin-bottom: 2.6rem;
+  background-color: transparent;
+`;
+
+export const LogoImg = styled.img`
+  width: 140px;
+  height: auto;
+`;
+
+export const Input = styled.input.attrs((props) => ({
+  type: props.type,
+}))`
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #d0cece;
+  padding: 8px 1px;
+  outline: none;
+  line-height: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  &::placeholder {
+    color: #d0cece;
+  }
+`;
+
+export const Button = styled.button.attrs((props) => ({
+  type: props.type,
+}))`
+  width: 100%;
+  height: 52px;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.05px;
+  color: #000000;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  justify-content: center;
+  ${({ primary }) =>
+    primary
+      ? "background-color: #009EE4;margin-top: 60px;margin-bottom: 20px;color:#fff;border: 1px solid #009EE4;&:hover {background: #0080c1;border: 1px solid #0080c1;}&:active{background-color: #0080C1;}"
+      : "background-color: transparent;border: 1px solid #D0CECE;color:#000;&:hover{background-color: #F4F5F6;} &:active {background-color: #D9D9D9;}"};
 `;
 
-export const ModalHeader = styled(ModalHF)`
-  border-bottom: 1px solid #dbdbdb;
-  justify-content: space-between;
-`;
-
-export const ModalFooter = styled(ModalHF)`
-  border-top: 1px solid #dbdbdb;
-  justify-content: flex-end;
-`;
-
-export const ModalClose = styled.span`
-  cursor: pointer;
-  padding: 1rem;
-  margin: -1rem -1rem -1rem auto;
-`;
-
-export const ModalBody = styled.div`
-  overflow: auto;
-`;
-export const ModalContent = styled.div`
-  padding: 1rem;
-`;
+export const A = styled.a.attrs((props) => ({
+  href: props.href,
+}))``;
 
 export const Appear = keyframes`
     from {
